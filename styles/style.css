@@ -1,0 +1,74 @@
+body{
+	color: #B3B6B7;
+	font-size: 30px;
+}
+.box {
+	margin-top: 100px;
+}
+.container {
+	background-color: #154360;
+	min-height : 100vh;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+input {
+	padding:5px;
+	font-size: 20px;
+}
+
+ul {
+	padding: 0px;
+	max-width:500px;
+	margin: 20px auto 0px auto;
+	box-sizing: border-box;
+	border: 5px solid #111;
+}
+li {
+	list-style-type: none;
+	padding-bottom:5px;
+	text-align: center;
+	width: 100%;
+	border-bottom: 2px dashed #111;
+	word-wrap: break-word;
+}
+
+li:last-of-type {
+	border-bottom: none;
+	padding-bottom:0;
+}
+
+p {
+	margin: 0;
+	text-indent: 35px;
+	margin-right: 10px;
+}
+
+.removeBtn {
+	float: left;
+	display: none;
+}
+
+li:hover > .removeBtn {
+	float: left;
+	display: inline;
+	cursor: pointer;
+}
+
+i {
+	position: absolute;
+	color: red;
+}
+
+.addTask, h1 {
+	text-align: center;
+}
+
+.addItemBtn {
+	background-color: #5D6D7E;
+	box-shadow: 2px 2px 20px;
+	border-radius: 5px;
+	padding: 10px 20px 10px 20px;
+}
