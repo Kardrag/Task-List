@@ -83,14 +83,4 @@ i {
 	right: -120px;
 }
 
-.justAdded {
-}
-
-.inProgress {
-	background-color: green;
-}
-
-.finished {
-	text-decoration: line-through;
-}
 

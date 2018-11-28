@@ -31,16 +31,31 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 	removeBtn(xBtns);
+	function setStatus() {
+		for(let i = 0; i < statusBtn.length; i++) {
+			statusBtn[i].addEventListener('change', function() {
+				if ( this.value === "newTask") {
+					this.parentNode.style = "background-color: #154360";
+					this.parentNode.querySelector("p").style = "text-decoration: none";
 
-	// for(let i = 0; i < statusBtn.length; i++) {
-	// 	statusBtn[i].addEventListener('change', function() {
-	// 		console.log("status changed")
-	// 	});
-	// }
+				} else if ( this.value === "inProgress") {
+					this.parentNode.style = "background-color: #032140";
+					this.parentNode.querySelector("p").style = "text-decoration: none";
+
+				} else if (this.value === "finished") {
+					this.parentNode.style = "background-color: #154360";
+					this.parentNode.querySelector("p").style = "text-decoration: line-through";
+				}
+			});
+		}
+	}
+	setStatus();
+	
 	
 
 	function newLiElement() {
 		// creating complete DOM li structure element 
+
 		// span icon
 		let newLi = document.createElement("li");
 		let newSpan = document.createElement("span");
@@ -51,16 +66,18 @@ document.addEventListener('DOMContentLoaded', function() {
 		select.classList.add("status");
 		let option1 = document.createElement("option");
 		option1.classList.add("justAdded");
-		option1.innerText = "just added";
+		option1.setAttribute("value", "newTask");
+		option1.innerText = "new";
 		select.appendChild(option1);
 		let option2 = document.createElement("option");
 		option2.classList.add("inProgress");
+		option2.setAttribute("value", "inProgress");
 		option2.innerText = "in progress";
 		select.appendChild(option2);
 		let option3 = document.createElement("option");
 		option3.classList.add("finished");
+		option3.setAttribute("value", "finished");
 		option3.innerText = "finished";
-
 		select.appendChild(option3);
 		newLi.appendChild(select);
 		// p
@@ -70,6 +87,21 @@ document.addEventListener('DOMContentLoaded', function() {
 		let newP = document.createElement("p");
 		newLi.appendChild(newP);
 		newLi.lastElementChild.innerText = document.querySelector("input").value;
+
+		// option function for new created elements 
+		select.addEventListener("change", function() {
+			if ( this.value === "newTask") {
+					this.parentNode.style = "background-color: #154360";
+					this.parentNode.querySelector("p").style = "text-decoration: none";
+				} else if ( this.value === "inProgress") {
+					this.parentNode.style = "background-color: #032140";
+					this.parentNode.querySelector("p").style = "text-decoration: none";
+
+				} else if (this.value === "finished") {
+					this.parentNode.style = "background-color: #154360";
+					this.parentNode.querySelector("p").style = "text-decoration: line-through";
+				}
+		})
 
 		// remove function
 		newSpan.addEventListener("click", function() {

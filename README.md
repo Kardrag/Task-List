@@ -6,4 +6,4 @@ technologies: HTML, CSS, Javascript.
 
 To do: 
 - extend select status
-- remove border when task list is empty / DONE
+- remove border when task list is empty
